@@ -20,6 +20,7 @@
 from flask import Flask, request
 from flask_restplus import Api, Resource, fields
 import psycopg2
+from werkzeug.utils import cached_property
 from itertools import islice
 
 def create_app():
