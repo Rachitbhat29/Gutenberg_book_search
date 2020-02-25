@@ -193,7 +193,7 @@ def create_app():
         return final_query
 
     def connect_db():
-        c = psycopg2.connect("postgresql://postgres:admin@localhost/Book_Repo_Db")
+        c = psycopg2.connect("postgresql://lmfkeqvoqnrodw:291de5aac6a0354d495dc8e678e5349efd9db0d558faedf2465517f17611e682@ec2-18-210-51-239.compute-1.amazonaws.com/d878ihg45eb9g8")
         return c
 
     # @app.teardown_request
