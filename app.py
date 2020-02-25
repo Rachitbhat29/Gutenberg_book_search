@@ -6,13 +6,6 @@
 ##  Author:  Rachit Bhatnagar <rachit.bhat29@gmail.com>
 ##  Date:    22 Feb 2020
 ##
-##  References:
-##    - http://docs.sqlalchemy.org/en/latest/orm/query.html
-##        #sqlalchemy.orm.query.Query.filter
-##    - http://docs.sqlalchemy.org/en/latest/orm/internals.html
-##        #sqlalchemy.orm.attributes.QueryableAttribute.like
-##    - http://www.unixwiz.net/techtips/sql-injection.html
-##
 ##
 ###########################################################################
 
@@ -54,7 +47,7 @@ left join books_format f on f.book_id = b.id """
 
 query3 = """ GROUP by title, b.download_count
 order by b.download_count DESC
-limit 26) t"""
+) t"""
 
 final_query = ''
 pageno = 1 #Default page no.
@@ -70,7 +63,7 @@ class ReturnJson(Resource):
                      'topic': 'Topic should filter on either ‘subject’ or ‘bookshelf’ or both.',
                      'author': 'Author Name',
                      'title': 'Book Title',
-                     'page': 'Page Number'
+                     'page': 'Page Number, each page can have 25 max items'
                      })
     def get(self):
         c = connect_db()
